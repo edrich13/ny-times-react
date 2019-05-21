@@ -1,0 +1,17 @@
+.article{
+    margin: 10px auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    .article-image{
+        font-size: 35px;
+    }
+    .article-date{
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .article-date{
+        float: right;
+    }
+}
