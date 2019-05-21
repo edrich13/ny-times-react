@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { getArticles } from '../../../server-request/network';
 import './ArticleList.scss';
 
 
-export default class ArticleList extends React.Component {
+export default class ArticleList extends Component {
+	_isMounted = false;
 
 	constructor(props) {
 		super(props);
@@ -13,9 +14,16 @@ export default class ArticleList extends React.Component {
 	}
 
 	componentWillMount() {
+		this._isMounted = true;
+
 		getArticles().then((data) => {
 			this.setState({ articles: data.results });
 		});
+	}
+	
+
+	componentWillUnmount() {
+		this._isMounted = false;
 	}
 
 	render() {
@@ -30,7 +38,7 @@ export default class ArticleList extends React.Component {
 						<div className="row">
 							<div className="col-xs-2">
 								<div className="article-image">
-								<i className="glyphicon glyphicon-picture"></i>
+									<i className="glyphicon glyphicon-picture"></i>
 								</div>
 							</div>
 							<div className="col-xs-8">
