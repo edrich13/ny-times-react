@@ -9,7 +9,7 @@ import '../assets/stylesheet/custom.scss';
 import { getArticles } from '../services/api';
 
 
-export default class App extends Component {
+export class App extends Component {
 
   constructor(props) {
     super(props);
@@ -41,4 +41,4 @@ export default class App extends Component {
   }
 }
 
-export { App };
+export default App;
