@@ -1,28 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+import Articles from '../components/Articles/Articles';
 import enzyme, { shallow } from 'enzyme';
 import axios from 'axios';
-import Home from './Home';
 
-it('renders without crashing home test', () => {
+it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Home />, div);
+  ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('renders without crashing home test', () => {
-  enzyme.shallow(<Home />);
+it('renders without crashing', () => {
+  enzyme.shallow(<App />);
 });
 
 jest.mock('axios');
 
-describe('Home component', () => {
+describe('App component', () => {
 
   describe('when rendered', () => {
-    it('should fetch a list of Articles in Home', () => {
+    it('should fetch a list of Articles in App', () => {
       const getSpy = jest.spyOn(axios, 'get');
       const toDoListInstance = shallow(
-        <Home />
+        <App />
       );
       expect(getSpy).toBeCalled();
     });

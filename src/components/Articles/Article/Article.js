@@ -1,9 +1,11 @@
 
 import React from 'react';
 
+import './Article.scss';
+
 const article = (props) => {
     return (
-        <div className="article pointer" onClick={() => window.open(props.article.url)}>
+        <div className="article" onClick={() => window.open(props.article.url)}>
             <div className="row">
                 <div className="col-xs-2">
                     <div className="article-image">
