@@ -5,7 +5,7 @@ import Article from './Article/Article'
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-import { getArticles } from '../../services/network';
+import { getArticles } from '../../services/api';
 
 
 export default class Home extends Component {
