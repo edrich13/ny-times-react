@@ -4,21 +4,23 @@ import React from 'react';
 import './Article.scss';
 
 const article = (props) => {
+    const { id, title, byline, published_date, media, url } = props.article;
+
     return (
-        <div className="article" onClick={() => window.open(props.article.url)}>
+        <div className="article" onClick={() => window.open(url)} key={id}>
             <div className="row">
                 <div className="col-xs-2">
                     <div className="article-image">
-                        <img className="img-responsive" src={props.article.media[0]['media-metadata'][1].url} alt={props.article.media[0].caption} />
+                        <img className="img-responsive" src={media[0]['media-metadata'][1].url} alt={media[0].caption} />
                     </div>
                 </div>
                 <div className="col-xs-8">
-                    <h4 className="article-title">{props.article.title}</h4>
+                    <h4 className="article-title">{title}</h4>
                     <div className="article-byline-date">
-                        <span className="article-bylinne">{props.article.byline}</span>
+                        <span className="article-bylinne">{byline}</span>
                         <div className="article-date">
                             <i className="glyphicon glyphicon-calendar icon-pad"></i>
-                            <div className="inline-block">{props.article.published_date}</div>
+                            <div className="inline-block">{published_date}</div>
                         </div>
                     </div>
                 </div>

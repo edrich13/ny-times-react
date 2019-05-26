@@ -3,12 +3,13 @@ import React from 'react';
 import Article from './Article/Article'
 
 const articles = (props) => {
+  const { articles } = props;
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          {props.articles.map((article, index) => {
+          {articles.map((article, index) => {
             return (
               <Article article={article} key={index} />
             );
