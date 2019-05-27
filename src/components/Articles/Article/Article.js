@@ -7,14 +7,14 @@ const article = (props) => {
     const { id, title, byline, published_date, media, url } = props.article;
 
     return (
-        <div className="article" onClick={props.goToDetails(url)} key={id}>
+        <div className="article" key={id}>
             <div className="row">
                 <div className="col-xs-2">
                     <div className="article-image">
                         <img className="img-responsive" src={media[0]['media-metadata'][1].url} alt={media[0].caption} />
                     </div>
                 </div>
-                <div className="col-xs-8">
+                <div className="col-xs-8" onClick={props.goToDetails(url)} >
                     <h4 className="article-title">{title}</h4>
                     <div className="article-byline-date">
                         <span className="article-bylinne">{byline}</span>
@@ -24,7 +24,7 @@ const article = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="col-xs-2 text-center">
+                <div className="col-xs-2 text-center" onClick={() => window.open(url)}>
                     <i className="glyphicon glyphicon-chevron-right pointer"></i>
                 </div>
             </div>
