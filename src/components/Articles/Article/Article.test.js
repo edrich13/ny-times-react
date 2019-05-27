@@ -9,11 +9,11 @@ configure({ adapter: new Adapter });
 
 describe('<Article />', () => {
     it('should have an article title', () => {
-        const wrapper = shallow(<Article article={article} />);
+        const wrapper = shallow(<Article article={article} goToDetails={goToDetails} />);
         expect(wrapper.contains(<h4 className="article-title">{article.title}</h4>)).toEqual(true);
     })
     it('should have an article byline', () => {
-        const wrapper = shallow(<Article article={article} />);
+        const wrapper = shallow(<Article article={article} goToDetails={goToDetails} />);
         expect(wrapper.contains(<span className="article-bylinne">{article.byline}</span>)).toEqual(true);
     })
 });
@@ -46,5 +46,9 @@ const article = {
             ]
         }
     ]
+}
+
+const goToDetails = () => {
+
 }
 

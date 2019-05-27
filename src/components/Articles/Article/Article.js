@@ -7,7 +7,7 @@ const article = (props) => {
     const { id, title, byline, published_date, media, url } = props.article;
 
     return (
-        <div className="article" onClick={() => window.open(url)} key={id}>
+        <div className="article" onClick={props.goToDetails(url)} key={id}>
             <div className="row">
                 <div className="col-xs-2">
                     <div className="article-image">

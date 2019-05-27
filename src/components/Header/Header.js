@@ -5,6 +5,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link as RouterLink } from 'react-router-dom';
+import './Header.css';
+
+import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
   root: {
@@ -35,7 +39,13 @@ class Header extends Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              NY Times Most Popular
+              <Link
+                to="/"
+                component={RouterLink}
+                className="link-text"
+              >
+                NY Times Most Popular
+              </Link>
             </Typography>
           </Toolbar>
         </AppBar>
